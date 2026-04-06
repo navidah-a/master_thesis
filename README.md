@@ -1,2 +1,1 @@
-# master_thesis
-code for master thesis
+A benchmarking framework for causal structure learning algorithms, developed as part of a master's thesis. The goal is to make it easy to compare how well different algorithms recover the true causal graph from data, across a variety of datasets and evaluation metrics.
