@@ -60,3 +60,22 @@ class Metric:
             "Recall":    self.recall(),
             "F1":        self.f1(),
         }
+    
+def evaluate(true_edges: list[tuple[str, str]], pred_edges: list[tuple[str, str]]) -> dict:
+    """Convert edge lists to adjacency matrices and compute all metrics."""
+    # Get all nodes
+    nodes = sorted(set(n for e in true_edges + pred_edges for n in e))
+    idx = {n: i for i, n in enumerate(nodes)}
+    n = len(nodes)
+
+    true_mat = np.zeros((n, n), dtype=int)
+    pred_mat = np.zeros((n, n), dtype=int)
+
+    for src, dst in true_edges:
+        true_mat[idx[src], idx[dst]] = 1
+    for src, dst in pred_edges:
+        pred_mat[idx[src], idx[dst]] = 1
+
+    m = Metric(pred_mat, true_mat)  
+    return {k.lower(): v for k, v in m.all().items()}
+

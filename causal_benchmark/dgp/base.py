@@ -26,15 +26,16 @@ class dgp(ABC):
 
 
     @abstractmethod
-    def get_ground_truth(self):
+    def get_ground_truth(self) -> list[tuple[str, str]]:
         """
         Return the true causal graph for this DGP.
 
         Returns:
-            A ground-truth graph (e.g. as an adjacency matrix or networkx DiGraph).
+            List of (cause, effect) string tuples.
         """
 
-    @property
     def name(self) -> str:
         """Human-readable name for this DGP. Defaults to class name."""
         return self.__class__.__name__
+    
+
