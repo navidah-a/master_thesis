@@ -35,7 +35,7 @@ class dgp(ABC):
         """
 
     def name(self) -> str:
-        """Human-readable name for this DGP. Defaults to class name."""
+        """Defaults to class name."""
         return self.__class__.__name__
     
 
