@@ -1,4 +1,5 @@
 from pgmpy.estimators import BIC, GES
+#from pgmpy.causal_discovery.GES import GES
 from structure_learner import structure_learner
 import pandas as pd
 

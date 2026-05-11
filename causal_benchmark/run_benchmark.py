@@ -1,7 +1,9 @@
 import pandas as pd
+import dgp
 from pgmpy.utils import get_example_model
 from pgmpy.sampling import BayesianModelSampling
 
+from dgp.notears import NotearsDAGP
 from dgp import linear_gaussian
 from dgp.ecoli70 import Ecoli70
 from dgp.alarm import AlarmDGP     
@@ -68,20 +70,24 @@ if __name__ == "__main__":
     dgps = [
         #linear_gaussian(),
         #Ecoli70(),
-        AlarmDGP(),
+        #AlarmDGP()
+        NotearsDAGP(n_nodes=10, graph_type="ER", sem_type="gauss", seed=42),
     ]
     learners = [
-        #PClearner(alpha=0.05),
+        PClearner(alpha=0.05),
         #GESLearner(),
-        HCSLearner(max_indegree=3, epsilon=1e-4),
+        #HCSLearner(max_indegree=3, epsilon=1e-4),
+        
     ]
     sample_sizes = [100] # tune here 500, 1000, 5000
 
     results = run_benchmark(dgps, learners, sample_sizes, n_runs=5)
+    #results =  metrics.evaluate(true_edges= get_ground_truth(), pred_edges=learners.estimate(df))
     print(results)
 
     summary = summarize(results)
     print(summary)
+    
 
     # Visualize ground truth graphs
     for dgp in dgps:
