@@ -15,7 +15,7 @@ class GESLearner(structure_learner):
     def fit(self, df: pd.DataFrame) -> list[tuple[str, str]]:
         #scoring = BIC(data=df)
         est = GES(df)
-        model = est.estimate(scoring_method=BIC(data=df))
+        model = est.estimate(scoring_method="bic-g")
         return list(model.edges())
 
 
