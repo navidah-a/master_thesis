@@ -1,5 +1,4 @@
 .venv_thesis/
-results/
 __pycache__/
 *.pyc
 .DS_Store

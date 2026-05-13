@@ -1,0 +1,6 @@
+dgp,learner,n_samples,run,seed,shd,precision,recall,f1
+"NotearsDAGP(n=10, edges=20, ER, gauss)",GESLearner,100,0,420,32.0,0.2692307692307692,0.35,0.3043478260869565
+"NotearsDAGP(n=10, edges=20, ER, gauss)",GESLearner,100,1,421,37.0,0.2571428571428571,0.45,0.32727272727272727
+"NotearsDAGP(n=10, edges=20, ER, gauss)",GESLearner,100,2,422,20.0,0.5,0.65,0.5652173913043479
+"NotearsDAGP(n=10, edges=20, ER, gauss)",GESLearner,100,3,423,23.0,0.45161290322580644,0.7,0.5490196078431372
+"NotearsDAGP(n=10, edges=20, ER, gauss)",GESLearner,100,4,424,20.0,0.5,0.7,0.5833333333333334

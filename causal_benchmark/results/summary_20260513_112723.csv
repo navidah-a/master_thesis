@@ -1,0 +1,4 @@
+,,,shd,shd,precision,precision,recall,recall,f1,f1
+,,,mean,std,mean,std,mean,std,mean,std
+dgp,learner,n_samples,,,,,,,,
+"NotearsDAGP(n=10, edges=20, ER, gauss)",GESLearner,100,26.4,7.701,0.396,0.123,0.57,0.16,0.466,0.138
