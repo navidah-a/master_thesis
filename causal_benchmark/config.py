@@ -15,7 +15,7 @@ SAMPLE_SIZES = [100, 500, 1000, 5000]  # different sample sizes to evaluate
 
 DGPS = [
     # Uncomment to add more DGPs
-    {"type": "NotearsDAGP", "n_nodes": 10, "n_edges": 20, "graph_type": "ER", "sem_type": "gauss"},
+    {"type": "NotearsDAGP", "n_nodes": 10, "n_edges": 10, "graph_type": "ER", "sem_type": "gauss"},
     # {"type": "NotearsDAGP", "n_nodes": 10, "n_edges": 20, "graph_type": "SF", "sem_type": "gauss"},
     # {"type": "AlarmDGP"},
 ]
@@ -23,7 +23,7 @@ DGPS = [
 LEARNERS = [
     # Uncomment to add more learners
     {"type": "GESLearner"},
-    {"type": "PClearner", "alpha": 0.05},
+    {"type": "PClearner", "alpha": 0.1},
     # {"type": "HCSLearner", "max_indegree": 3, "epsilon": 1e-4},
 ]
 

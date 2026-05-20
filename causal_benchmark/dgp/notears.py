@@ -65,7 +65,7 @@ class NotearsDAGP(dgp):
 
     # ── Public API ────────────────────────────────────────────────────────────
 
-    def simulate(self, n_samples: int) -> pd.DataFrame:
+    def simulate(self, n_samples: int, seed: int = None) -> pd.DataFrame:
         """
         Simulate data from the stored DAG using a linear SEM.
 
@@ -75,6 +75,8 @@ class NotearsDAGP(dgp):
         Returns:
             A DataFrame with columns X1, X2, ..., Xn.
         """
+        if seed is not None:
+            np.random.seed(seed)
         X = self._simulate_linear_sem(self._W_true, n_samples, self.sem_type, self.noise_scale)
         columns = [f"X{i + 1}" for i in range(self.n_nodes)]
         return pd.DataFrame(X, columns=columns)

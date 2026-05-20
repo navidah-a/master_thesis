@@ -1,0 +1,103 @@
+=== Parameters ===
+   parameter                       value
+   base_seed                          42
+      n_runs                          10
+sample_sizes      [100, 500, 1000, 5000]
+        dgps             ['NotearsDAGP']
+    learners ['GESLearner', 'PClearner']
+
+=== Results ===
+                                   dgp    learner  n_samples  run  seed  shd  precision  recall       f1
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner        100    0   420 29.0   0.333333    0.45 0.382979
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner        100    1   421 34.0   0.230769    0.30 0.260870
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner        100    2   422 21.0   0.478261    0.55 0.511628
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner        100    3   423 44.0   0.071429    0.10 0.083333
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner        100    4   424 36.0   0.264706    0.45 0.333333
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner        100    5   425 30.0   0.343750    0.55 0.423077
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner        100    6   426 42.0   0.133333    0.20 0.160000
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner        100    7   427 24.0   0.416667    0.50 0.454545
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner        100    8   428 37.0   0.160000    0.20 0.177778
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner        100    9   429 36.0   0.192308    0.25 0.217391
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner        500    0   420 33.0   0.303030    0.50 0.377358
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner        500    1   421 31.0   0.333333    0.55 0.415094
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner        500    2   422 31.0   0.310345    0.45 0.367347
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner        500    3   423 36.0   0.264706    0.45 0.333333
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner        500    4   424  2.0   0.909091    1.00 0.952381
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner        500    5   425 21.0   0.482759    0.70 0.571429
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner        500    6   426 24.0   0.428571    0.60 0.500000
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner        500    7   427 31.0   0.333333    0.55 0.415094
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner        500    8   428 35.0   0.272727    0.45 0.339623
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner        500    9   429 28.0   0.346154    0.45 0.391304
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner       1000    0   420 32.0   0.312500    0.50 0.384615
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner       1000    1   421 15.0   0.600000    0.75 0.666667
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner       1000    2   422 25.0   0.419355    0.65 0.509804
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner       1000    3   423 33.0   0.324324    0.60 0.421053
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner       1000    4   424 22.0   0.464286    0.65 0.541667
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner       1000    5   425 33.0   0.314286    0.55 0.400000
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner       1000    6   426 28.0   0.366667    0.55 0.440000
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner       1000    7   427 43.0   0.171429    0.30 0.218182
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner       1000    8   428 29.0   0.384615    0.75 0.508475
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner       1000    9   429 25.0   0.413793    0.60 0.489796
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner       5000    0   420 35.0   0.272727    0.45 0.339623
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner       5000    1   421 26.0   0.400000    0.60 0.480000
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner       5000    2   422 33.0   0.290323    0.45 0.352941
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner       5000    3   423 26.0   0.400000    0.60 0.480000
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner       5000    4   424 44.0   0.200000    0.40 0.266667
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner       5000    5   425 31.0   0.351351    0.65 0.456140
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner       5000    6   426 37.0   0.257143    0.45 0.327273
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner       5000    7   427 34.0   0.305556    0.55 0.392857
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner       5000    8   428 46.0   0.157895    0.30 0.206897
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner       5000    9   429 33.0   0.314286    0.55 0.400000
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner        100    0   420 22.0   0.375000    0.15 0.214286
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner        100    1   421 21.0   0.428571    0.15 0.222222
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner        100    2   422 24.0   0.250000    0.10 0.142857
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner        100    3   423 22.0   0.333333    0.10 0.153846
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner        100    4   424 20.0   0.500000    0.20 0.285714
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner        100    5   425 20.0   0.500000    0.25 0.333333
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner        100    6   426 22.0   0.428571    0.30 0.352941
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner        100    7   427 26.0   0.200000    0.10 0.133333
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner        100    8   428 22.0   0.375000    0.15 0.214286
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner        100    9   429 21.0   0.400000    0.10 0.160000
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner        500    0   420 22.0   0.375000    0.15 0.214286
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner        500    1   421 20.0   0.500000    0.20 0.285714
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner        500    2   422 24.0   0.250000    0.10 0.142857
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner        500    3   423 22.0   0.250000    0.05 0.083333
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner        500    4   424 22.0   0.333333    0.10 0.153846
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner        500    5   425 22.0   0.333333    0.10 0.153846
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner        500    6   426 23.0   0.333333    0.15 0.206897
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner        500    7   427 20.0   0.500000    0.15 0.230769
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner        500    8   428 22.0   0.250000    0.05 0.083333
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner        500    9   429 24.0   0.166667    0.05 0.076923
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner       1000    0   420 25.0   0.222222    0.10 0.137931
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner       1000    1   421 24.0   0.250000    0.10 0.142857
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner       1000    2   422 21.0   0.454545    0.25 0.322581
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner       1000    3   423 24.0   0.166667    0.05 0.076923
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner       1000    4   424 23.0   0.285714    0.10 0.148148
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner       1000    5   425 23.0   0.285714    0.10 0.148148
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner       1000    6   426 22.0   0.333333    0.10 0.153846
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner       1000    7   427 26.0   0.200000    0.10 0.133333
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner       1000    8   428 23.0   0.333333    0.15 0.206897
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner       1000    9   429 22.0   0.333333    0.10 0.153846
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner       5000    0   420 23.0   0.200000    0.05 0.080000
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner       5000    1   421 24.0   0.250000    0.10 0.142857
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner       5000    2   422 24.0   0.166667    0.05 0.076923
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner       5000    3   423 23.0   0.285714    0.10 0.148148
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner       5000    4   424 26.0   0.200000    0.10 0.133333
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner       5000    5   425 26.0   0.250000    0.15 0.187500
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner       5000    6   426 24.0   0.250000    0.10 0.142857
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner       5000    7   427 26.0   0.125000    0.05 0.071429
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner       5000    8   428 25.0   0.222222    0.10 0.137931
+NotearsDAGP(n=10, edges=20, ER, gauss)  PClearner       5000    9   429 25.0   0.272727    0.15 0.193548
+
+=== Summary ===
+                                                              shd        precision        recall            f1       
+                                                             mean    std      mean    std   mean    std   mean    std
+dgp                                    learner    n_samples                                                          
+NotearsDAGP(n=10, edges=20, ER, gauss) GESLearner 100        33.3  7.349     0.262  0.130  0.355  0.164  0.300  0.142
+                                                  500        27.2  9.998     0.398  0.192  0.570  0.172  0.466  0.186
+                                                  1000       28.5  7.546     0.377  0.112  0.590  0.131  0.458  0.118
+                                                  5000       34.5  6.587     0.295  0.079  0.500  0.108  0.370  0.090
+                                       PClearner  100        22.0  1.826     0.379  0.097  0.160  0.070  0.221  0.079
+                                                  500        22.1  1.370     0.329  0.108  0.110  0.052  0.163  0.071
+                                                  1000       23.3  1.494     0.286  0.083  0.115  0.053  0.162  0.064
+                                                  5000       24.6  1.174     0.222  0.050  0.095  0.037  0.131  0.043

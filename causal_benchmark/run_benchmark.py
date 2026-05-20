@@ -1,5 +1,7 @@
 import os
+from random import seed
 import pandas as pd
+from dgp.base import dgp
 import numpy as np
 from datetime import datetime
 
@@ -72,10 +74,13 @@ def run_benchmark(dgps: list, learners: list, sample_sizes: list, n_runs: int) -
             for n_samples in sample_sizes:
                 for run in range(n_runs):
 
-                    seed = get_run_seed(run)
-                    np.random.seed(seed)
+                    #seed = get_run_seed(run)
+                    #np.random.seed(seed)
 
-                    df = dgp.simulate(n_samples=n_samples)
+                    #df = dgp.simulate(n_samples=n_samples)
+
+                    seed = get_run_seed(run)
+                    df = dgp.simulate(n_samples=n_samples, seed=seed)   
 
                     try:
                         pred_edges = learner.fit(df)
