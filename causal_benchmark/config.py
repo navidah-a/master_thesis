@@ -8,10 +8,10 @@ This file defines all the settings for the benchmark, including:
 
 # ── Reproducibility ───────────────────────────────────────────────────────────
 BASE_SEED = 42        # master seed — all run seeds are derived from this
-N_RUNS = 5         # number of repeated runs per (dgp, learner, n_samples)
+N_RUNS = 10         # number of repeated runs per (dgp, learner, n_samples)
 
 # ── Experiment settings ───────────────────────────────────────────────────────
-SAMPLE_SIZES = [100]
+SAMPLE_SIZES = [100, 500, 1000, 5000]  # different sample sizes to evaluate
 
 DGPS = [
     # Uncomment to add more DGPs
@@ -23,7 +23,7 @@ DGPS = [
 LEARNERS = [
     # Uncomment to add more learners
     {"type": "GESLearner"},
-    #{"type": "PClearner", "alpha": 0.05},
+    {"type": "PClearner", "alpha": 0.05},
     # {"type": "HCSLearner", "max_indegree": 3, "epsilon": 1e-4},
 ]
 
