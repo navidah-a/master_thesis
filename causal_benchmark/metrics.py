@@ -10,6 +10,7 @@ class Metric:
     Usage:
         m = Metric(estimated, ground_truth)
         print(m.shd())
+        print(m.sid())
         print(m.f1())
         print(m.all())
     """
@@ -30,6 +31,23 @@ class Metric:
         Lower is better (0 = perfect).
         """
         return float(np.sum(self.estimated != self.ground_truth))
+    
+    def sid(self) -> float:
+        """
+        Structural Intervention Distance.
+        Counts the number of interventional distributions that differ between
+        the estimated and true graph. More sensitive than SHD — penalizes
+        wrong edge directions more heavily.
+        Lower is better (0 = perfect).
+ 
+        """
+        try:
+            from cdt.metrics import SID
+            return float(SID(self.ground_truth, self.estimated))
+        except ImportError:
+            raise ImportError(
+                "SID requires the cdt library. Install it with: pip install cdt"
+            )
 
     def precision(self) -> float:
         """
@@ -59,6 +77,7 @@ class Metric:
             "Precision": self.precision(),
             "Recall":    self.recall(),
             "F1":        self.f1(),
+            "SID":       self.sid(),
         }
     
 def evaluate(true_edges: list[tuple[str, str]], pred_edges: list[tuple[str, str]]) -> dict:

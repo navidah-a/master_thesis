@@ -3,7 +3,7 @@ from random import seed
 import pandas as pd
 from dgp.base import dgp
 import numpy as np
-from datetime import datetime
+from datetime import datetime, time
 
 import config
 import metrics
@@ -83,7 +83,9 @@ def run_benchmark(dgps: list, learners: list, sample_sizes: list, n_runs: int) -
                     df = dgp.simulate(n_samples=n_samples, seed=seed)   
 
                     try:
+                        start_time  = time.time()
                         pred_edges = learner.fit(df)
+                        elapsed     = round(time.time() - start_time, 4)
                         scores = metrics.evaluate(true_edges, pred_edges)
                     except Exception as e:
                         print(
@@ -91,6 +93,7 @@ def run_benchmark(dgps: list, learners: list, sample_sizes: list, n_runs: int) -
                             f"n={n_samples} / run={run}: {e}"
                         )
                         scores = {"shd": None, "precision": None, "recall": None, "f1": None}
+                        elapsed = None
 
                     results.append({
                         "dgp":       dgp.name(),
@@ -98,6 +101,7 @@ def run_benchmark(dgps: list, learners: list, sample_sizes: list, n_runs: int) -
                         "n_samples": n_samples,
                         "run":       run,
                         "seed":      seed,
+                        "time_s":    elapsed,
                         **scores,
                     })
 
@@ -109,7 +113,7 @@ def summarize(results: pd.DataFrame) -> pd.DataFrame:
     return (
         results
         .groupby(["dgp", "learner", "n_samples"])
-        [["shd", "precision", "recall", "f1"]]
+        [["shd", "precision", "recall", "f1", "time_s"]]
         .agg(["mean", "std"])
         .round(3)
     )
