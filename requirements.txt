@@ -4,3 +4,5 @@ scipy
 pandas  
 networkx
 matplotlib
+python-igraph>=0.10
+cdt
