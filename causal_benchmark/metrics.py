@@ -45,9 +45,8 @@ class Metric:
             from cdt.metrics import SID
             return float(SID(self.ground_truth, self.estimated))
         except ImportError:
-            raise ImportError(
-                "SID requires the cdt library. Install it with: pip install cdt"
-            )
+            return None
+            
 
     def precision(self) -> float:
         """

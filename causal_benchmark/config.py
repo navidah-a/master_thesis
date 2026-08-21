@@ -11,7 +11,7 @@ BASE_SEED = 42        # master seed — all run seeds are derived from this
 N_RUNS = 10         # number of repeated runs per (dgp, learner, n_samples)
 
 # ── Experiment settings ───────────────────────────────────────────────────────
-SAMPLE_SIZES = [100, 500, 1000, 5000]  # different sample sizes to evaluate
+SAMPLE_SIZES = [100]  # different sample sizes to evaluate
 
 DGPS = [
     # Uncomment to add more DGPs

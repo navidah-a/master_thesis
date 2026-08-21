@@ -3,7 +3,8 @@ from random import seed
 import pandas as pd
 from dgp.base import dgp
 import numpy as np
-from datetime import datetime, time
+import time
+from datetime import datetime
 
 import config
 import metrics
@@ -14,6 +15,8 @@ from dgp.alarm import AlarmDGP
 from learners.GESlearner import GESLearner
 from learners.PClearner import PClearner
 
+from cdt.metrics import SID
+import numpy as np
 
 # ── DGP and Learner factories ─────────────────────────────────────────────────
 
@@ -47,6 +50,12 @@ def build_learners() -> list:
             learners.append(HCSLearner(
                 max_indegree=l.get("max_indegree", 3),
                 epsilon=l.get("epsilon", 1e-4),
+            ))
+        elif l["type"] == "DAGMAlearner":
+            from learners.DAGMAlearner import DAGMAlearner
+            learners.append(DAGMAlearner(
+                max_iter=l.get("max_iter", 1000),
+                learning_rate=l.get("learning_rate", 0.01),
             ))
     return learners
 
