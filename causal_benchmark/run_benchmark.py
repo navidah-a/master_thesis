@@ -14,6 +14,7 @@ from dgp.notears import NotearsDAGP
 from dgp.alarm import AlarmDGP
 from learners.GESlearner import GESLearner
 from learners.PClearner import PClearner
+from learners.DAGMAlearner import DAGMAlearner
 
 from cdt.metrics import SID
 import numpy as np
