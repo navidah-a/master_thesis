@@ -16,6 +16,7 @@ from learners.GESlearner import GESLearner
 from learners.PClearner import PClearner
 from learners.DAGMAlearner import DAGMAlearner
 from learners.DASlearner import DASlearner
+from learners.LiNGAMlearner import LiNGAMlearner
 
 from cdt.metrics import SID
 import numpy as np
@@ -62,6 +63,9 @@ def build_learners() -> list:
         elif l["type"] == "DASlearner":
             from learners.DASlearner import DASlearner
             learners.append(DASlearner(alpha=l.get("alpha", 0.05)))
+        elif l["type"] == "LiNGAMlearner":
+            from learners.LiNGAMlearner import LiNGAMlearner
+            learners.append(LiNGAMlearner())
     return learners
 
 
