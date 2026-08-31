@@ -12,8 +12,10 @@ class DASlearner(structure_learner):
         self.alpha = alpha
 
     def fit(self, df: pd.DataFrame) -> list[tuple[str, str]]:
-        context = make_context(df)
+        context = make_context().variables(data=df).build()
         das = DAS(alpha=self.alpha)
-        das.fit(context)
-        edges = das.get_edges()
-        return edges
+        #das.fit(context)
+        #edges = das.get_edges()
+        das.learn_graph(df, context)
+        graph = das.graph_
+        return list(graph.edges())
