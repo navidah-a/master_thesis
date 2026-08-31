@@ -15,6 +15,7 @@ from dgp.alarm import AlarmDGP
 from learners.GESlearner import GESLearner
 from learners.PClearner import PClearner
 from learners.DAGMAlearner import DAGMAlearner
+from learners.DASlearner import DASlearner
 
 from cdt.metrics import SID
 import numpy as np
@@ -58,6 +59,9 @@ def build_learners() -> list:
                 max_iter=l.get("max_iter", 1000),
                 learning_rate=l.get("learning_rate", 0.01),
             ))
+        elif l["type"] == "DASlearner":
+            from learners.DASlearner import DASlearner
+            learners.append(DASlearner(alpha=l.get("alpha", 0.05)))
     return learners
 
 
@@ -98,6 +102,8 @@ def run_benchmark(dgps: list, learners: list, sample_sizes: list, n_runs: int) -
                         elapsed     = round(time.time() - start_time, 4)
                         scores = metrics.evaluate(true_edges, pred_edges)
                     except Exception as e:
+                        import traceback
+                        traceback.print_exc()
                         print(
                             f"Failed: {dgp.name()} / {learner.name()} / "
                             f"n={n_samples} / run={run}: {e}"
@@ -174,7 +180,7 @@ if __name__ == "__main__":
     summary = summarize(results)
     print(summary)
 
-    save_results(results, summary)
+    #save_results(results, summary)
 
     for dgp in dgps:
         analysis.plot_graph(dgp.get_ground_truth(), title=f"Ground truth: {dgp.name()}")
