@@ -22,10 +22,11 @@ DGPS = [
 
 LEARNERS = [
     # Uncomment to add more learners
-    {"type": "GESLearner"},
+    #{"type": "DAGMAlearner", "max_iter": 1000, "learning_rate": 0.01},
     {"type": "PClearner", "alpha": 0.1},
     # {"type": "HCSLearner", "max_indegree": 3, "epsilon": 1e-4},
+    {"type": "DASlearner", "alpha": 0.05},
 ]
 
 # ── Storage ───────────────────────────────────────────────────────────────────
-RESULTS_DIR = "results"   # folder where CSVs are saved
+#RESULTS_DIR = "results"   # folder where CSVs are saved
