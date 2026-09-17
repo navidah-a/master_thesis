@@ -21,6 +21,12 @@ from learners.LiNGAMlearner import LiNGAMlearner
 from cdt.metrics import SID
 import numpy as np
 
+def standardize(X):
+    """Standardize each variable (column) to mean 0, std 1."""
+    mean = X.mean(axis=0)
+    std = X.std(axis=0, ddof=1)  # ddof=1 for sample std
+    return (X - mean) / std
+
 # ── DGP and Learner factories ─────────────────────────────────────────────────
 
 def build_dgps() -> list:
@@ -98,7 +104,8 @@ def run_benchmark(dgps: list, learners: list, sample_sizes: list, n_runs: int) -
                     #df = dgp.simulate(n_samples=n_samples)
 
                     seed = get_run_seed(run)
-                    df = dgp.simulate(n_samples=n_samples, seed=seed)   
+                    df = dgp.simulate(n_samples=n_samples, seed=seed) 
+                    df = standardize(df)  # standardize data for all learners  
 
                     try:
                         start_time  = time.time()
