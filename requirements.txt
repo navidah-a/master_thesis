@@ -5,7 +5,7 @@ pandas
 networkx
 matplotlib
 python-igraph>=0.10
-cdt
-cdt
 das
 dodiscover @ git+https://github.com/py-why/dodiscover.git
+cdt==0.6.0
+rpy2==3.6.7
