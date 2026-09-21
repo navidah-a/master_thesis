@@ -1,4 +1,5 @@
 import numpy as np
+from cdt.metrics import SID, SHD
 
 
 class Metric:
@@ -30,8 +31,9 @@ class Metric:
         Counts edge insertions, deletions, and flips needed to reach the true graph.
         Lower is better (0 = perfect).
         """
-        return float(np.sum(self.estimated != self.ground_truth))
-    
+
+        return float(SHD(self.ground_truth, self.estimated))    
+
     def sid(self) -> float:
         """
         Structural Intervention Distance.
@@ -41,12 +43,9 @@ class Metric:
         Lower is better (0 = perfect).
  
         """
-        try:
-            from cdt.metrics import SID
-            return float(SID(self.ground_truth, self.estimated))
-        except ImportError:
-            return None
-            
+        
+        return float(SID(self.ground_truth, self.estimated))
+    
 
     def precision(self) -> float:
         """
