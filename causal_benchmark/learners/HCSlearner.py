@@ -1,5 +1,5 @@
 from pgmpy.estimators import HillClimbSearch
-from pgmpy.estimators import BIC
+from pgmpy.estimators import BICGauss as BIC
 from structure_learner import structure_learner
 import pandas as pd
 
